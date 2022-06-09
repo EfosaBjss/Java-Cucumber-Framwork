@@ -11,7 +11,7 @@ public class DriverUtil {
             if(Browser.equalsIgnoreCase("chrome")){
                 System.setProperty("webdriver.chrome.driver","C:\\DRIVERS\\chromedriver.exe");
             }
-         // WebDriver driver = new ChromeDriver();
+        //  WebDriver driver = new ChromeDriver();
            }
     }
 }
