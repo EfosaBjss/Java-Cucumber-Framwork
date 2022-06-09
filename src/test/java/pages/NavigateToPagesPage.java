@@ -44,6 +44,7 @@ public class NavigateToPagesPage {
 
         System.out.println(data.get(0));
 
+      // clicking on the insights tab
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(ClickInsightsTab)).click();
         String ActualTitle = "Insights | BJSS";
@@ -51,21 +52,25 @@ public class NavigateToPagesPage {
         Assert.assertEquals(ExpectedTitle, ActualTitle);
         System.out.println(insightsTab);
 
+        //clicking on Your Industry tab
         driver.findElement(ClickYourIndustryTab).click();
         boolean verifyTitle = driver.getTitle().equalsIgnoreCase("Industry Expertise | BJSS");
         Assert.assertTrue(verifyTitle);
         System.out.println(industryTab);
 
+        //clicking on contact tab
         driver.findElement(ClickContactTab).click();
         verifyTitle = driver.getTitle().equalsIgnoreCase("Contact BJSS | BJSS");
         Assert.assertTrue(verifyTitle);
         System.out.println(contactsTab);
 
+        //clicking on About Bjss Tab
         driver.findElement(ClickAboutBJSSTab).click();
         verifyTitle = driver.getTitle().equalsIgnoreCase("About BJSS - Why Choose Us | BJSS");
         Assert.assertTrue(verifyTitle);
         System.out.println(aboutBJSS);
 
+        //clicking on careers tab
         driver.findElement(ClickCareersTab).click();
         String Actual_Title = "Careers | Overview";
         String Expected_Title = driver.getTitle();
@@ -74,6 +79,7 @@ public class NavigateToPagesPage {
 
     }
 
+    // asserting that we are on the career page by verifying title
  public void VerifyCareersPageIsDisplayed (){
         String ActualTitle = "Careers | Overview";
         String ExpectedTitle = driver.getTitle();
