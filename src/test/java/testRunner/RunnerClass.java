@@ -24,5 +24,4 @@ public class RunnerClass {
         driverUtil.setDriver("Chrome");
     }
 
-
 }

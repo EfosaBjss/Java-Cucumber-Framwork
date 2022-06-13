@@ -51,6 +51,12 @@
                 <version>1.5.1</version>
             </dependency>
 
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-junit-platform-engine</artifactId>
+                <version>7.3.3</version>
+            </dependency>
+
     </dependencies>
 
     <build>

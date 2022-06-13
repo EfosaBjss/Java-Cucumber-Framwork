@@ -18,6 +18,8 @@ public class NavigateToPagesPage {
     By ClickYourIndustryTab = By.xpath("//*[@id=\"hs_menu_wrapper_header_menu\"]/ul/li[3]/a");
     By ClickContactTab = By.xpath("//*[@id=\"hs_menu_wrapper_header_menu\"]/ul/li[7]/a");
     By ClickAboutBJSSTab = By.xpath("//*[@id=\"hs_menu_wrapper_header_menu\"]/ul/li[1]/a");
+    By ClickLifeButton = By.xpath("//*[@id=\"hs_cos_wrapper_module_16385730801841\"]/nav/div/div[2]/ul/li[3]/a");
+    By ClickExploreButton = By.cssSelector("#hs_cos_wrapper_module_16385751852013 > div > div > div.md\\:pr-12.md\\:w-2\\/3.w-full.up-when-in.relative.z-10.active > a");
 
 
 
@@ -87,4 +89,29 @@ public class NavigateToPagesPage {
         Assert.assertEquals(ExpectedTitle, ActualTitle);
 
  }
+
+    public void VerifyUserIsOnCareersPage() throws InterruptedException{
+        boolean verifyTitle = driver.getTitle().equalsIgnoreCase("Careers | Overview");
+        if (verifyTitle){System.out.println("career page is verified");
+        }else {System.out.println("cannot verify career page");}
+        Thread.sleep(3000);
+
+    }
+
+    public void ClickLifeLink (){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(ClickLifeButton)).click();
+    }
+
+    public void ClickExploreRolesLink () throws InterruptedException {
+        driver.findElement(ClickExploreButton).click();
+        Thread.sleep(3000);
+    }
+
+    public void VerifyJobSearchPage (){
+        String ExpectedTitle = driver.getTitle();
+        String ActualTitle = "Careers | Search";
+        Assert.assertEquals(ExpectedTitle, ActualTitle);
+        System.out.println(driver.getTitle());
+    }
 }
