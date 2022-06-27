@@ -30,7 +30,6 @@ public class SearchRoleFilterPage extends DriverUtil {
         Thread.sleep(3000);
     }
 
-   // public void EnterSearchCriteria (io.cucumber.datatable.DataTable SearchCriteria){
    public void EnterSearchCriteria (io.cucumber.datatable.DataTable SearchCriteria){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(CountryFilter)));
@@ -40,7 +39,6 @@ public class SearchRoleFilterPage extends DriverUtil {
 
        List<List<String>> data = SearchCriteria.asLists(String.class);
 
-      // List<String> data = SearchCriteria.asList();
         System.out.println(data.get(0).get(1));
 
        String ByCountry = data.get(1).get(1);
