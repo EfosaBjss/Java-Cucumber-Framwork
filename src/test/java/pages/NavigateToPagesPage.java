@@ -2,15 +2,14 @@ package pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import util.DriverUtil;
 
 import java.time.Duration;
 import java.util.List;
 
-public class NavigateToPagesPage {
+public class NavigateToPagesPage extends DriverUtil {
 
     By AllowAll = By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll");
     By ClickCareersTab = By.xpath("//*[@id=\"hs_menu_wrapper_header_menu\"]/ul/li[6]/a");
@@ -23,8 +22,7 @@ public class NavigateToPagesPage {
 
 
 
-    WebDriver driver = new ChromeDriver();
-   String BaseUrl = "https://www.bjss.com/";
+    String BaseUrl = "https://www.bjss.com/";
 
     public void LaunchURL (){
         driver.get(BaseUrl);
@@ -33,7 +31,7 @@ public class NavigateToPagesPage {
         String ActualTitle = "World-Class Business Technology Consultancy | BJSS";
         String ExpectedTitle = driver.getTitle();
         Assert.assertEquals(ExpectedTitle,ActualTitle);
-}
+    }
 
     public void NavigateToPages(io.cucumber.datatable.DataTable dataTable){
         List<String> data = dataTable.asList();
@@ -46,7 +44,7 @@ public class NavigateToPagesPage {
 
         System.out.println(data.get(0));
 
-      // clicking on the insights tab
+        // clicking on the insights tab
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(ClickInsightsTab)).click();
         String ActualTitle = "Insights | BJSS";
@@ -82,13 +80,13 @@ public class NavigateToPagesPage {
     }
 
     // asserting that we are on the career page by verifying title
- public void VerifyCareersPageIsDisplayed (){
+    public void VerifyCareersPageIsDisplayed (){
         String ActualTitle = "Careers | Overview";
         String ExpectedTitle = driver.getTitle();
         System.out.println(driver.getTitle());
         Assert.assertEquals(ExpectedTitle, ActualTitle);
 
- }
+    }
 
     public void VerifyUserIsOnCareersPage() throws InterruptedException{
         boolean verifyTitle = driver.getTitle().equalsIgnoreCase("Careers | Overview");

@@ -12,8 +12,8 @@ Feature: NavigateToPages
       |careers|
     Then the career page should be displayed
 
- # @Test
-  # Scenario: Verify that I can explore roles on the BJSS website
+  @Explore
+   Scenario: Verify that I can explore roles on the BJSS website
     Given I am on the careers page
     And I click the life button
     When  I click the explore roles button

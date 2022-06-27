@@ -1,17 +1,18 @@
 package util;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class DriverUtil {
 
-    public WebDriver driver;
+    public static WebDriver driver;
 
     public void setDriver(String Browser){
        if(driver == null){
             if(Browser.equalsIgnoreCase("chrome")){
                 System.setProperty("webdriver.chrome.driver","C:\\DRIVERS\\chromedriver.exe");
             }
-        //  WebDriver driver = new ChromeDriver();
+            driver = new ChromeDriver();
            }
     }
 }

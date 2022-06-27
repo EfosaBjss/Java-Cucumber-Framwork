@@ -11,7 +11,7 @@ import util.DriverUtil;
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
         features = {"./src/test/resources"},
-        tags = "@Test",
+        tags = "@Test or @Explore or @Search",
         glue = {"steps"},
         monochrome = true
 )
