@@ -15,4 +15,8 @@ public class DriverUtil {
             driver = new ChromeDriver();
            }
     }
+
+    public void closeDriver (){
+        driver.quit();
+    }
 }

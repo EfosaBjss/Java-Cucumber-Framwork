@@ -3,6 +3,7 @@ package testRunner;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import util.DriverUtil;
@@ -22,6 +23,12 @@ public class RunnerClass {
     public static void startSession(){
         DriverUtil driverUtil = new DriverUtil();
         driverUtil.setDriver("Chrome");
+    }
+
+    @AfterClass
+    public  static void endSession(){
+        DriverUtil driverUtil = new DriverUtil();
+        driverUtil.closeDriver();
     }
 
 }
